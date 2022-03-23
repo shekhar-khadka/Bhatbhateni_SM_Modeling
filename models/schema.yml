@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: BHATBHATENI_MODELING
+    database: STAGING_DB
+    schema: PUBLIC
+    tables:
+      - name: BHATBHATENI_STAGE_TABLE
+
