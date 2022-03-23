@@ -7,9 +7,9 @@
 
 with temp as (
     SELECT 
-    {{ dbt_utils.surrogate_key('BRANCH','BRANCH_CODE') }} as BRANCH_HASH_KEY,
+    {{ dbt_utils.surrogate_key('BRANCH','CITY') }} as BRANCH_HASH_KEY,
     BRANCH,
-    BRANCH_CODE,
+    CITY,
     GETDATE() AS LOAD_DATE
     
 
@@ -22,7 +22,7 @@ rank_1 as (
     SELECT
     BRANCH_HASH_KEY,
     BRANCH,
-    BRANCH_CODE,
+    CITY,
     LOAD_DATE,
     ROW_NUMBER() OVER ( PARTITION BY BRANCH_HASH_KEY 
                             ORDER BY LOAD_DATE ) as row_number
@@ -35,7 +35,7 @@ record_to_insert as (
 
     SELECT d.BRANCH_HASH_KEY,
            d.BRANCH,
-           d.BRANCH_CODE,
+           d.CITY,
            d.LOAD_DATE
     FROM rank_1 as d
     {% if is_incremental() %}

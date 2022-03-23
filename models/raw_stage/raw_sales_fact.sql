@@ -9,7 +9,7 @@ SELECT
     EMPLOYEE,
     DESIGNATION,
     BRANCH,
-    BRANCH_CODE,
+    CITY,
     DATE,
     DAY
  

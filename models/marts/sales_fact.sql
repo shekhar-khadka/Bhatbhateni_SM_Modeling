@@ -11,7 +11,7 @@ with temp as (
     {{ dbt_utils.surrogate_key('PRODUCT','CATEGORY') }} as PRODUCT_HASH_KEY,
     {{ dbt_utils.surrogate_key('EMPLOYEE','DESIGNATION') }} as EMPLOYEE_HASH_KEY,
     {{ dbt_utils.surrogate_key('DATE','DAY') }} as DATE_HASH_KEY,
-    {{ dbt_utils.surrogate_key('BRANCH','BRANCH_CODE') }} as BRANCH_HASH_KEY,
+    {{ dbt_utils.surrogate_key('BRANCH','CITY') }} as BRANCH_HASH_KEY,
     QUANTITY,
     SALES_AMOUNT,
 
