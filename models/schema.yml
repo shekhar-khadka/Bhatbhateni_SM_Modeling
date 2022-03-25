@@ -6,4 +6,13 @@ sources:
     schema: PUBLIC
     tables:
       - name: BHATBHATENI_STAGE_TABLE
+        columns:
+          - name: CONTACT
+            tests:
+              - not_null
+              - unique
+          - name: BRANCH
+            tests:
+              - accepted_values:
+                  values: ['BAGMATI', 'PROVINCE-1']    
 
